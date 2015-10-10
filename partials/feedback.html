@@ -1,0 +1,66 @@
+<md-card>
+  <md-card-content>
+    <h2 class="md-title">Hallo!</h2>
+    <p>
+      Vielen Dank, dass Du dir die Zeit nimmst, mir persönliches Feedback für die Winterophase 2015 zu geben.
+    </p>
+    <p>
+      Mich interessiert vor allem Feedback zu Dingen wie Kommunikation mit Helfern, Vortragsstil, Körpersprache, Organisiertheitseindruck™ usw. Über jedes andere Feedback freue ich mich aber natürlich auch.
+    </p>
+    <p>
+      Hier werden keine personenbezogenen Daten erfasst oder gespeichert. Jedes Feedback wird anonym erfasst. Ich werde dieses Feedback mit niemandem teilen und keinesfalls irgendwo veröffentlichen. Feedback für die ganze Ophase ist per Mail an ophase-leitung@d120.de besser aufgehoben. Wenn du möchtest, dass ich dir antworte, schreibe diesen Wunsch bitte explizit in den Text und ergänze Kontaktdaten.
+    </p>
+  </md-card-content>
+</md-card>
+<md-card>
+  <md-card-content>
+    <h2 class="md-title">Hello!</h2>
+    <p>
+      Thank you very much for taking the time to provide my feedback for the winter Ophase 2015.
+    </p>
+    <p>
+      I am interestes in feedback regarding things like communication with tutors, lecture style, body language etc. I also appreciate any other kind of feedback, of course.
+    </p>
+    <p>
+      I do not store or gather any kind of personal data. Every feedback is saved anonymously. I will not share this feedback with anyone or publish it. Feedback regarding the Ophase itself is better sent by mail to ophase-leitung@d120.de. If you would like to have an answer, please state this wish explicitly and provide contact data.
+    </p>
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-card-content>
+    <h2 class="md-title">Feedback zur Winterophase 2015</h2>
+    <h4>Gesamtorganisation / overall organisation</h4>
+    Wie fandest du die Organisation der Ophase insgesamt? / How would you rate the overall organisation?<br />
+    <ng-rate-it ng-model="feedback.general"></ng-rate-it>
+    <md-input-container>
+      <label>Warum? / Why?</label>
+      <textarea ng-model="feedback.generalComment"></textarea>
+    </md-input-container>
+
+    <h4>Kommunikation mit Helfern / communications</h4>
+    Wie fandest du mein Kommunikationsverhalten insgesamt? / How would you rate my communications behaviour?<br />
+    <ng-rate-it ng-model="feedback.communications"></ng-rate-it>
+    <md-input-container>
+      <label>Kommentare zum Umgang mit Helfern, Tutoren, Orgas, Ersties, usw. Hat dich etwas verärgert oder gefreut? / Comments about communcation with helpers, freshmen etc.</label>
+      <textarea ng-model="feedback.communicationsComment"></textarea>
+    </md-input-container>
+
+    <h4>Vortragsstil / lecture style</h4>
+    Wie fandest du meinen Vortragsstil insgesamt? / How would you rate my behaviour in lectures?<br />
+    <ng-rate-it ng-model="feedback.lecture"></ng-rate-it>
+    <md-input-container>
+      <label>Kommentare zum Vortragsstil, Aussprache, Körpersprache usw. / Comments about lecture style, pronunciation, body language etc.</label>
+      <textarea ng-model="feedback.lectureComment"></textarea>
+    </md-input-container>
+
+    <h4>Platz for Kommentare / any comments</h4>
+    <md-input-container>
+      <label>Was möchtest du mir noch sagen? / What would you like me to know?</label>
+      <textarea ng-model="feedback.misc"></textarea>
+    </md-input-container>
+    <div class="md-actions" layout="row" layout-align="start">
+      <md-button class="md-primary md-raised" ng-click="send()">Feedback abschicken</md-button>
+    </div>
+  </md-card-content>
+</md-card>

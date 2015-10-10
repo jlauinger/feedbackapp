@@ -1,0 +1,15 @@
+.bg-white { background-color: white; }
+
+.padding-1 { padding: 1rem; }
+
+.nav a {
+  text-decoration: none;
+  color: #d29e00;
+}
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.ngrateit {
+  padding: 1rem 0;
+}

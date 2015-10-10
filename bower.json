@@ -1,0 +1,23 @@
+{
+  "name": "feedbackapp",
+  "version": "0.1.0",
+  "authors": [
+    "Johannes Lauinger <johannes@lauinger-it.de>"
+  ],
+  "license": "GPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.5",
+    "angular-material": "~0.11.0",
+    "angular-rateit": "~2.0.3",
+    "angular-route": "~1.4.5"
+  },
+  "description": "Feedback app to capture personal feedback",
+  "main": "index.html"
+}
