@@ -7,3 +7,55 @@
     </div>
   </md-card-content>
 </md-card>
+
+<h2 class="md-padding">Übersicht</h2>
+<md-card>
+  <md-card-content>
+    <table>
+      <tr>
+        <td><b>Gesamtorganisation:</b></td>
+        <td>{{ feedback.avg('general') }}</td>
+      </tr>
+      <tr>
+        <td><b>Kommunikation:</b></td>
+        <td>{{ feedback.avg('communications') }}</td>
+      </tr>
+      <tr>
+        <td><b>Vortragsstil:</b></td>
+        <td>{{ feedback.avg('lecture') }}</td>
+      </tr>
+    </table>
+  </md-card-content>
+</md-card>
+
+<h2 class="md-padding">Einzelergebnisse</h2>
+<md-card ng-repeat="item in feedback">
+  <md-card-content>
+    <table>
+      <tr>
+        <td><b>Gesamtorganisation:</b></td>
+        <td>{{ +item.general === -1 ? 'n/a' : item.general }}</td>
+      </tr>
+      <tr>
+        <td><b>Kommunikation:</b></td>
+        <td>{{ +item.communications === -1 ? 'n/a' : item.communications }}</td>
+      </tr>
+      <tr>
+        <td><b>Kommentar:</b></td>
+        <td>{{ item.communicationsComment }}</td>
+      </tr>
+      <tr>
+        <td><b>Vortragsstil:</b></td>
+        <td>{{ +item.lecture === -1 ? 'n/a' : item.lecture }}</td>
+      </tr>
+      <tr>
+        <td><b>Kommentar:</b></td>
+        <td>{{ item.lectureComment }}</td>
+      </tr>
+      <tr>
+        <td><b>Sonstiges:</b></td>
+        <td>{{ item.misc }}</td>
+      </tr>
+    </table>
+  </md-card-content>
+</md-card>
