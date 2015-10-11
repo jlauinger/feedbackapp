@@ -31,7 +31,17 @@ database user, e.g. `feedback`. Configure its credentials in `api/v1/database.ph
 Install the database schema like so (change the credentials as needed):
 
 ```
-mysql feedback -u feedback -p < app/install-database.sql
+mysql feedback -u feedback -p < api/v1/install-database.sql
+```
+
+### Login credentials
+
+Change the login credentials to access the feedback results to something secure.
+These are located in 'api/v1/login.php':
+
+```
+const USER = 'user';
+const PASS = 'password';
 ```
 
 ## License

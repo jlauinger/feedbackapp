@@ -1,13 +1,15 @@
 <?php
 
+session_start();
+
 require('database.php');
 
 switch($_SERVER["REQUEST_METHOD"]) {
-  case "GET":
+  case 'GET':
     get_feedback();
     break;
-  case "POST":
-    add_feedback();
+  case 'POST':
+    post_feedback();
     break;
   default:
     http_response_code(405);
@@ -15,13 +17,18 @@ switch($_SERVER["REQUEST_METHOD"]) {
 }
 
 function get_feedback() {
-  $db = new Database();
-  $sth = $db->prepare('SELECT * FROM feedback');
-  $sth->execute();
-  echo json_encode($sth->fetchAll(PDO::FETCH_ASSOC));
+  if ($_SESSION["loggedin"] == true) {
+    $db = new Database();
+    $sth = $db->prepare('SELECT * FROM feedback');
+    $sth->execute();
+    echo json_encode($sth->fetchAll(PDO::FETCH_ASSOC));
+  } else {
+    echo json_encode(array('status' => 'unauthorized'));
+    http_response_code(403);
+  }
 }
 
-function add_feedback() {
+function post_feedback() {
   $data = json_decode(file_get_contents('php://input'));
   $db = new Database();
   $sth = $db->prepare('INSERT INTO feedback (general, communications, communicationsComment, lecture, lectureComment, misc) VALUES (:general, :communications, :communicationsComment, :lecture, :lectureComment, :misc)');

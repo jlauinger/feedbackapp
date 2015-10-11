@@ -3,11 +3,13 @@
 
 .padding-1 { padding: 1rem; }
 
-.nav a {
+.margin-top-2 { margin-top: 2rem; }
+
+a {
   text-decoration: none;
   color: #d29e00;
 }
-.nav a:hover {
+a:hover {
   text-decoration: underline;
 }
 

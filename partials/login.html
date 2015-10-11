@@ -1,0 +1,24 @@
+<md-card>
+  <md-card-content>
+    <h2 class="md-title">Bitte einloggen</h2>
+
+    <form ng-submit="login()">
+      <md-input-container>
+        <label>Benutzername</label>
+        <input type="text" ng-model="creds.user" />
+      </md-input-container>
+      <md-input-container>
+        <label>Passwort</label>
+        <input type="password" ng-model="creds.password" />
+      </md-input-container>
+
+      <div class="md-actions" layout="row" layout-align="start">
+        <md-button type="submit" class="md-primary md-raised" ng-disabled="!creds.user || !creds.password">Login</md-button>
+      </div>
+    </form>
+  </md-card-content>
+</md-card>
+
+<div layout="row" layout-align="center" class="margin-top-2">
+  <a href="#/">Zurück zur Feedbackseite / Back to the feedback page</a>
+</div>

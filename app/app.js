@@ -6,6 +6,10 @@ app.config(['$routeProvider', '$mdThemingProvider', function($routeProvider, $md
       templateUrl: 'partials/feedback.html',
       controller: 'feedbackCtrl'
     })
+    .when('/login', {
+      templateUrl: 'partials/login.html',
+      controller: 'loginCtrl'
+    })
     .when('/admin', {
       templateUrl: 'partials/admin.html',
       controller: 'adminCtrl'
@@ -19,4 +23,12 @@ app.config(['$routeProvider', '$mdThemingProvider', function($routeProvider, $md
     .primaryPalette('amber')
     .accentPalette('pink')
     .warnPalette('red')
+}]);
+
+app.run(['$rootScope', '$http', function($rootScope, $http) {
+  $http.get('api/v1/login.php').then(function(response) {
+    $rootScope.loggedin = response.data.loggedin;
+  }, function() {
+    $rootScope.loggedin = false;
+  });
 }]);
