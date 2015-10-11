@@ -1,4 +1,5 @@
 .bg-white { background-color: white; }
+.bg-gray { background-color: #f6f6f6; }
 
 .padding-1 { padding: 1rem; }
 
@@ -12,4 +13,8 @@
 
 .ngrateit {
   padding: 1rem 0;
+}
+
+md-toolbar .links {
+  font-size: 12pt;
 }

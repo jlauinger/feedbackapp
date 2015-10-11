@@ -2,6 +2,8 @@ var app = angular.module('feedback');
 
 app.controller('feedbackCtrl', ['$scope', '$mdToast', '$http', function($scope, $mdToast, $http) {
 
+  $scope.feedback = {};
+
   $scope.send = function() {
     $http.post('api/v1/feedback.php', $scope.feedback).then(function(){
       $mdToast.show(
@@ -13,6 +15,18 @@ app.controller('feedbackCtrl', ['$scope', '$mdToast', '$http', function($scope, 
         $mdToast.simple().content('Feedback konnte nicht gespeichert werden, bitte später erneut versuchen. Error saving feedback, please try again later.')
       );
     });
-  }
+  };
+
+  $scope.feedbackEmpty = function() {
+    var f = $scope.feedback;
+    console.log(f.communicationsComment === '' && f.lectureComment === '' && f.misc === '');
+    if (!f.general && !f.communications && !f.lecture
+        && (!f.communicationsComment || f.communicationsComment === '')
+        && (!f.lectureComment || f.lectureComment === '')
+        && (!f.misc || f.misc === '')) {
+      return true;
+    }
+    return false;
+  };
 
 }]);

@@ -22,16 +22,16 @@ function get_feedback() {
 }
 
 function add_feedback() {
+  $data = json_decode(file_get_contents('php://input'));
   $db = new Database();
-  $sth = $db->prepare('INSERT INTO feedback (general, generalComment, communications, communicationsComment, lecture, lectureComment, misc) VALUES (:general, :generalComment, :communications, :communicationsComment, :lecture, :lectureComment, :misc)');
+  $sth = $db->prepare('INSERT INTO feedback (general, communications, communicationsComment, lecture, lectureComment, misc) VALUES (:general, :communications, :communicationsComment, :lecture, :lectureComment, :misc)');
   if($sth->execute(array(
-    ':general' => $_POST["general"],
-    ':generalComment' => $_POST["generalComment"],
-    ':communications' => $_POST["communications"],
-    ':communicationsComment' => $_POST["communicationsComment"],
-    ':lecture' => $_POST["lecture"],
-    ':lectureComment' => $_POST["lectureComment"],
-    ':misc' => $_POST["misc"]
+    ':general' => isset($data->general) ? $data->general : -1,
+    ':communications' => isset($data->communications) ? $data->communications : -1,
+    ':communicationsComment' => isset($data->communicationsComment) ? $data->communicationsComment : '',
+    ':lecture' => isset($data->lecture) ? $data->lecture : -1,
+    ':lectureComment' => isset($data->lectureComment) ? $data->lectureComment : '',
+    ':misc' => isset($data->misc) ? $data->misc : ''
   ))) {
     echo json_encode(array('status' => 'ok'));
     http_response_code(201);
