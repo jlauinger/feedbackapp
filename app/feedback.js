@@ -19,8 +19,7 @@ app.controller('feedbackCtrl', ['$scope', '$mdToast', '$http', function($scope, 
 
   $scope.feedbackEmpty = function() {
     var f = $scope.feedback;
-    console.log(f.communicationsComment === '' && f.lectureComment === '' && f.misc === '');
-    if (!f.general && !f.communications && !f.lecture
+    if (!f.communications && !f.lecture
         && (!f.communicationsComment || f.communicationsComment === '')
         && (!f.lectureComment || f.lectureComment === '')
         && (!f.misc || f.misc === '')) {

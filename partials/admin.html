@@ -13,10 +13,6 @@
   <md-card-content>
     <table>
       <tr>
-        <td><b>Gesamtorganisation:</b></td>
-        <td>{{ feedback.avg('general') }}</td>
-      </tr>
-      <tr>
         <td><b>Kommunikation:</b></td>
         <td>{{ feedback.avg('communications') }}</td>
       </tr>
@@ -32,10 +28,6 @@
 <md-card ng-repeat="item in feedback">
   <md-card-content>
     <table>
-      <tr>
-        <td><b>Gesamtorganisation:</b></td>
-        <td>{{ +item.general === -1 ? 'n/a' : item.general }}</td>
-      </tr>
       <tr>
         <td><b>Kommunikation:</b></td>
         <td>{{ +item.communications === -1 ? 'n/a' : item.communications }}</td>

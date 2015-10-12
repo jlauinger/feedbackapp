@@ -33,7 +33,6 @@ function post_feedback() {
   $db = new Database();
   $sth = $db->prepare('INSERT INTO feedback (general, communications, communicationsComment, lecture, lectureComment, misc) VALUES (:general, :communications, :communicationsComment, :lecture, :lectureComment, :misc)');
   if($sth->execute(array(
-    ':general' => isset($data->general) ? $data->general : -1,
     ':communications' => isset($data->communications) ? $data->communications : -1,
     ':communicationsComment' => isset($data->communicationsComment) ? $data->communicationsComment : '',
     ':lecture' => isset($data->lecture) ? $data->lecture : -1,
@@ -43,7 +42,6 @@ function post_feedback() {
     echo json_encode(array('status' => 'ok'));
     http_response_code(201);
   } else {
-    print_r($db->errorInfo());
     echo json_encode(array('status' => 'error'));
     http_response_code(500);
   }
