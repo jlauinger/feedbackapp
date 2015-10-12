@@ -31,7 +31,7 @@ function get_feedback() {
 function post_feedback() {
   $data = json_decode(file_get_contents('php://input'));
   $db = new Database();
-  $sth = $db->prepare('INSERT INTO feedback (general, communications, communicationsComment, lecture, lectureComment, misc) VALUES (:general, :communications, :communicationsComment, :lecture, :lectureComment, :misc)');
+  $sth = $db->prepare('INSERT INTO feedback (communications, communicationsComment, lecture, lectureComment, misc) VALUES (:communications, :communicationsComment, :lecture, :lectureComment, :misc)');
   if($sth->execute(array(
     ':communications' => isset($data->communications) ? $data->communications : -1,
     ':communicationsComment' => isset($data->communicationsComment) ? $data->communicationsComment : '',
