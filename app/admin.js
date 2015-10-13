@@ -7,6 +7,7 @@ app.controller('adminCtrl', ['$rootScope', '$scope', '$mdToast', '$http', functi
     $mdToast.show(
       $mdToast.simple().content('Bitte zunächst einloggen.')
     );
+    return;
   }
 
   $http.get('api/v1/feedback.php').then(function(response) {

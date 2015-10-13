@@ -22,7 +22,7 @@ app.config(['$routeProvider', '$mdThemingProvider', function($routeProvider, $md
     .theme('default')
     .primaryPalette('amber')
     .accentPalette('pink')
-    .warnPalette('red')
+    .warnPalette('red');
 }]);
 
 app.run(['$rootScope', '$http', function($rootScope, $http) {

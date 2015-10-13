@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-  <title>Angular Material Testapp</title>
+  <title>Feedback für Johannes</title>
 
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
   <link rel="stylesheet" href="bower_components/angular-rateit/dist/ng-rateit.css" />
@@ -13,19 +13,18 @@
 </head>
 
 <body ng-app="feedback" layout="column">
-    <md-toolbar>
-      <div class="md-toolbar-tools">
-        <h3>Feedback für Johannes</h3>
-        <span flex></span>
-        <span class="links" hide-sm>
-          <a href="https://github.com/jlauinger/feedbackapp" target="_blank">Code auf GitHub</a>
-        </span>
-      </div>
-    </md-toolbar>
-    <md-content layout="column" flex class="md-padding bg-gray">
-      <div ng-view></div>
-    </md-content>
-  </div>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h3>Feedback für Johannes</h3>
+      <span flex></span>
+      <span class="links" hide-sm>
+        <a href="https://github.com/jlauinger/feedbackapp" target="_blank">Code auf GitHub</a>
+      </span>
+    </div>
+  </md-toolbar>
+  <md-content layout="column" flex class="md-padding bg-gray">
+    <div ng-view></div>
+  </md-content>
 
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-route/angular-route.min.js"></script>
